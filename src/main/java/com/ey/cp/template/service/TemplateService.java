@@ -1,14 +1,11 @@
 package com.ey.cp.template.service;
 
-import java.util.Date;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ey.cp.template.dto.CustomerDto;
-import com.ey.cp.template.dto.DocumentTypeDto;
 import com.ey.cp.template.dto.ResponseDto;
 import com.ey.cp.template.entity.CustomerEntity;
 import com.ey.cp.template.proxy.TestProxy;
@@ -42,25 +39,28 @@ public class TemplateService {
 			customerEntity = customerRepository.findCustomerByDocumentNumberAndDocumentTypeIdAndEnabled(documentCode, (long) documentType,
 					Constants.RECORD_ENABLED);
 			
-			if (customerEntity == null) {
+			if (null == customerEntity) {
 				response = Util.getResponse(false, null, Constants.NO_RECORD_FOUND);
 			}
 
 			// Customer Flow
-			customerDto.setId(customerEntity.getId());
-			customerDto.setAssignedRepresentativeId(customerEntity.getAssignedRepresentativeId());
+			customerDto.setId(1L);
+			
+			customerDto.setAssignedRepresentativeId(1L);
 			customerDto.setAssignedRepresentativeName(null);
-			customerDto.setFullName(customerEntity.getFullName());
+			customerDto.setFullName("");
 			customerDto.setDocumentType(documentType);
 			customerDto.setDocumentCode(documentCode);
 
 			// Set the channel name
-			customerDto.setNewCustomer(customerEntity.getNewCustomer());
-			customerDto.setCreationDate(customerEntity.getCreationDate());
-			customerDto.setCustomerCode(customerEntity.getCustomerCode());
+			customerDto.setNewCustomer(null);
+			customerDto.setCreationDate(null);
+			customerDto.setOfficeId(null);
+			customerDto.setOfficeName(null);
+			customerDto.setCustomerCode("");
 			
 //			DocumentTypeDto resp = testProxy.getDocumentType(customerDto.getDocumentType().longValue());
-			customerDto.setDocumentTypeName("");
+			customerDto.setDocumentTypeName(null);
 			
 			response = Util.getResponse(true, customerDto, null);
 		} catch (Exception e) {
