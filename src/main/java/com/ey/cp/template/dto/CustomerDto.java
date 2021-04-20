@@ -21,7 +21,7 @@ public class CustomerDto {
 	private Long segmentId;
 	private String segmentName;
 	private Byte linkage;
-//	private String riskLevel;
+	private String riskLevel;
 	private Date creationDate;
 	private Long officeId;
 	private String officeName;
@@ -98,13 +98,13 @@ public class CustomerDto {
 		this.linkage = linkage;
 	}
 
-//	public String getRiskLevel() {
-//		return riskLevel;
-//	}
-//
-//	public void setRiskLevel(String riskLevel) {
-//		this.riskLevel = riskLevel;
-//	}
+	public String getRiskLevel() {
+		return riskLevel;
+	}
+
+	public void setRiskLevel(String riskLevel) {
+		this.riskLevel = riskLevel;
+	}
 
 	public Date getCreationDate() {
 		return creationDate;

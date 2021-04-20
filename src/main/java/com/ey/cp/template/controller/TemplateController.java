@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ey.cp.template.dto.CustomerDto;
 import com.ey.cp.template.dto.ResponseDto;
 import com.ey.cp.template.service.TemplateService;
 import com.ey.cp.template.util.Util;

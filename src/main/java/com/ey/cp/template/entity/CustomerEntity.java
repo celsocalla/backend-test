@@ -43,9 +43,9 @@ public class CustomerEntity implements Serializable {
 	@Column(name = "C_FULL_NAME")
 	private String fullName;
 
-//	@NotNull
-//	@Column(name = "C_RISK_LEVEL")
-//	private String riskLevel;
+	@NotNull
+	@Column(name = "C_RISK_LEVEL")
+	private String riskLevel;
 
 	@NotNull
 	@Column(name = "N_NEW_CUSTOMER")
@@ -77,13 +77,13 @@ public class CustomerEntity implements Serializable {
 	@Column(name = "N_ASSIGNED_REPRESENTATIVE_ID")
 	private Long assignedRepresentativeId;
 
-//	@JoinColumn(name = "N_BASIC_SEGMENT_ID", referencedColumnName = "N_BASIC_SEGMENT_ID")
-//	@ManyToOne(optional = true, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//	private BasicSegmentEntity basicSegment;
-//
-//	@JoinColumn(name = "N_OFFICE_ID", referencedColumnName = "N_OFFICE_ID")
-//	@ManyToOne(optional = true, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//	private OfficeEntity office;
+	@JoinColumn(name = "N_BASIC_SEGMENT_ID", referencedColumnName = "N_BASIC_SEGMENT_ID")
+	@ManyToOne(optional = true, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private BasicSegmentEntity basicSegment;
+
+	@JoinColumn(name = "N_OFFICE_ID", referencedColumnName = "N_OFFICE_ID")
+	@ManyToOne(optional = true, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private OfficeEntity office;
 
 	@Column(name = "N_DOCUMENT_TYPE_ID")
 	private Long documentTypeId;
@@ -172,29 +172,29 @@ public class CustomerEntity implements Serializable {
 		this.assignedRepresentativeId = assignedRepresentativeId;
 	}
 
-//	public BasicSegmentEntity getBasicSegment() {
-//		return basicSegment;
-//	}
-//
-//	public void setBasicSegment(BasicSegmentEntity basicSegment) {
-//		this.basicSegment = basicSegment;
-//	}
-//
-//	public OfficeEntity getOffice() {
-//		return office;
-//	}
-//
-//	public void setOffice(OfficeEntity office) {
-//		this.office = office;
-//	}
+	public BasicSegmentEntity getBasicSegment() {
+		return basicSegment;
+	}
 
-//	public String getRiskLevel() {
-//		return riskLevel;
-//	}
-//
-//	public void setRiskLevel(String riskLevel) {
-//		this.riskLevel = riskLevel;
-//	}
+	public void setBasicSegment(BasicSegmentEntity basicSegment) {
+		this.basicSegment = basicSegment;
+	}
+
+	public OfficeEntity getOffice() {
+		return office;
+	}
+
+	public void setOffice(OfficeEntity office) {
+		this.office = office;
+	}
+
+	public String getRiskLevel() {
+		return riskLevel;
+	}
+
+	public void setRiskLevel(String riskLevel) {
+		this.riskLevel = riskLevel;
+	}
 
 	public String getCustomerCode() {
 		return customerCode;
