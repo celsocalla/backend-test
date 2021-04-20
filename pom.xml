@@ -27,7 +27,7 @@
         <sonar.sources>src/main/java</sonar.sources>
         <sonar.exclusions>**/*Config.java,**/*Dto.java,**/*Entity.java,**/*Proxy.java,**/*Repository.java,**/*Jwt.java,**/*Filter.java,**/*Handler.java,**/*Interceptor.java,**/*Utils.java,**/*Constants.java,**/*Util.java,**/*Application.java,**/*Builder.java,**/*Test.java,**/*Logger.java</sonar.exclusions>
 
-		<sonar.projectKey>celsocalla_backend-test</sonar.projectKey>
+		<sonar.projectKey>backend-test</sonar.projectKey>
 		<sonar.organization>backend-test</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
